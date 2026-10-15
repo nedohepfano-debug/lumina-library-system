@@ -1,0 +1,21 @@
+{
+  "name": "lumina-library",
+  "version": "1.0.0",
+  "description": "SDP152 - Lumina Library Resource & Member Management System (Makhanda, South Africa)",
+  "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --watch --disable-warning=ExperimentalWarning server.js",
+    "seed": "node --disable-warning=ExperimentalWarning src/seed.js",
+    "reset": "node --disable-warning=ExperimentalWarning src/seed.js --reset",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/**/*.test.js\"",
+    "build:css": "node scripts/build-css.mjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.0"
+  }
+}

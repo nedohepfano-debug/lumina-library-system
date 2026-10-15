@@ -1,0 +1,20 @@
+# One-click deploy for Render (https://render.com): New > Blueprint > pick this repo.
+services:
+  - type: web
+    name: lumina-library
+    runtime: node
+    plan: free
+    buildCommand: echo "No build step - the compiled CSS is committed"
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DEMO_MODE
+        value: "true"   # shows the demo sign-in hints; set to "false" for real use
